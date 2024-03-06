@@ -1,0 +1,32 @@
+join character-detective 0
+character-detective: Sorry to bother you, Ma'am. Were you home the night of the murder?
+join character-maria 4
+character-maria: Yes. I was ironing my socks. On Tuesday night I iron my socks.
+label q1-marie
+- Did you know the deceased?
+	character-maria: Oh, Mr. Murphy. Very well. Ah he was a great man. God rest him. It was an awful shock.
+- What kind of man was he?
+	character-maria: Ah, sure look. He was a great fella. Everybody’s friend. Always having parties. And fierce educated. Wrote books if you can believe. Sure I wouldn’t know what to do with one of them books. I’d eat it.”
+	character-detective: Very good, Ma’am.
+- Did you hear anything the night of the murder?
+	character-maria: Let me think. Well I wouldn’t be eavesdropping you understand but these walls are fierce thin so they are. Sure you’d hear everything. He had a female caller.
+	character-detective: What did she sound like?
+	character-maria: She wasn’t American. Foreign sounding. German or...
+	character-detective: Or Russian?
+	character-maria: Could have been. But I couldn’t swear by it. We have people from all over. New York is the melting pot they say!
+	- Hear anything else?
+		character-maria: There was some kind of music. Classical I think.
+	- Did you hear shouting or yelling?
+		character-maria: Yes. I put it down to...you know...the dirty deed. Of course now I know what it was really about. Poor man. God have mercy on his soul. Of course, if he been a good Catholic and waited till marriage...well I’ll say no more.
+		character-detective: Could you make anything out?
+		character-suspect: Hmm, well someone was calling someone an idiot, sure I’d recognise that in any language. And the lady was going on about a cable.
+		character-detective: Thank you, Ma’am.
+	- I want to ask you something else.
+	jump q1-marie
+- Did you know Mr. Murphy’s visitors?
+	character-maria: Yes. To be honest. He had 3 young wans on the go.
+	character-detective: What kind of girls?
+	character-maria: Now let me think. They were all half his age of course. An Irish girl, an Italian girl, and an Irish girl. Did you ever hear the like of it?
+	character-detective: Ma-am I’ve heard it all.
+- Leave
+	[end_timeline]

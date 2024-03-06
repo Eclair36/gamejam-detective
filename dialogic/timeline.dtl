@@ -1,0 +1,30 @@
+join character-detective 0
+character-detective (portrait-detective): I’d just like to ask you some questions, Ma’am.
+join character-suspect 4
+character-suspect (Portrait): Ask your questions. I’m an open book.
+character-detective: Where were you on the night of the 21st?
+character-suspect: At home, reading.
+character-detective: Reading, reading what?
+character-suspect: Kant.
+character-detective: Can’t tell me?
+character-suspect: No, Kant, the philosopher.
+character-detective: I see.
+label choice 1
+- Can anyone verify that? [if {Var} == true][else="disable"]
+	character-suspect: Just my books.
+	character-detective: 	And they don’t talk.
+	character-suspect: You have obviously never read Karl Marx.
+	jump timeline/choice 1
+- Any gentlemen callers?”
+	character-suspect: I prefer solitude.
+	character-detective: Sounds lonely.
+	character-suspect: For those of a lesser mind, yes.
+	jump timeline/choice 1
+- You didn’t paint the town red?”
+	character-suspect: No, I had a book signing the next day, I had to save my energy.
+- Did you know Fats?
+	character-suspect: Mainly by reputation. He was a kabjel, sorry, in English an idiot. A stupid sheep. blow hard. A bore. An intellectual dinosaur.
+	character-detective: Sounds like you didn’t like him much.
+	character-suspect: I don’t like stupid men. But I don’t usually kill them.
+- Leave
+	[end_timeline]

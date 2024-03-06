@@ -1,0 +1,98 @@
+[gd_scene load_steps=10 format=3 uid="uid://cf7rrbflur808"]
+
+[ext_resource type="Script" path="res://game_manager.gd" id="1_qqse8"]
+[ext_resource type="Texture2D" uid="uid://cifyicmiuqeqj" path="res://1920s-interior-upscale-music-room-vintage-images.jpg" id="2_oxk6e"]
+[ext_resource type="Texture2D" uid="uid://blm76nh5y70g4" path="res://cigar.png" id="3_4u8q1"]
+[ext_resource type="Texture2D" uid="uid://uxfyicoevuis" path="res://pen.png" id="3_8brgs"]
+[ext_resource type="Script" path="res://item.gd" id="4_rodsa"]
+[ext_resource type="Texture2D" uid="uid://dxaeogyt0vo22" path="res://record.png" id="5_wpe74"]
+[ext_resource type="Texture2D" uid="uid://c1encikq5rlbu" path="res://icon-suspect.png" id="6_6anl5"]
+[ext_resource type="Texture2D" uid="uid://bhlni8mpqdcav" path="res://icon-maria.png" id="8_jp0m3"]
+[ext_resource type="AudioStream" uid="uid://cg5p67aanuaer" path="res://Vibing Over Venus.mp3" id="9_nmaqi"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_qqse8")
+
+[node name="SceneBg" type="Sprite2D" parent="."]
+position = Vector2(961, 543)
+scale = Vector2(2.15556, 1.53482)
+texture = ExtResource("2_oxk6e")
+
+[node name="Cigar" type="Sprite2D" parent="."]
+position = Vector2(1782, 762)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_4u8q1")
+script = ExtResource("4_rodsa")
+item_description = "A cuban cigar."
+
+[node name="Area2D" type="Area2D" parent="Cigar"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cigar/Area2D"]
+polygon = PackedVector2Array(-46.5, -59.4, -46.5, -56.4, -4.8, -23, -3.2, -23, 52.5, 8.10001, 52.5, 9.5, 102.5, 47.5, 102.5, 54.5, 106.7, 74, 102.5, 74, 91.5, 95, 82, 95, 47.5, 98.5, 47.5, 94.4, -4.39999, 52, -6, 52, -78.5, 5.70001, -78.5, 4.20001, -95.5, -10.7, -95.5, -14.6, -100.5, -41, -96.2, -41, -86.3, -57, -82.2, -57, -72.5, -59.8, -72.5, -62.7)
+
+[node name="Pen" type="Sprite2D" parent="."]
+position = Vector2(559, 827)
+scale = Vector2(0.121429, 0.147143)
+texture = ExtResource("3_8brgs")
+script = ExtResource("4_rodsa")
+item_description = "A ladies elegant cigarette holder."
+
+[node name="Area2D" type="Area2D" parent="Pen"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pen/Area2D"]
+polygon = PackedVector2Array(267, -302.6, 267, -299.5, 275.8, -285.1, 272.9, -280, 271.4, -280, 171.4, -158, 170, -158, -88, 100, -88, 101.9, -261.7, 299, -263.7, 299, -279, 307.5, -279, 299.6, -283.8, 292.3, -281, 287, -279.4, 287, -151.4, 124, -150.3, 124, 239, -306, 239, -311.9)
+
+[node name="Record" type="Sprite2D" parent="."]
+position = Vector2(909, 839)
+scale = Vector2(0.198276, 0.12766)
+texture = ExtResource("5_wpe74")
+script = ExtResource("4_rodsa")
+item_description = "A recording of Swan Lake, the famous russion ballet."
+
+[node name="Area2D" type="Area2D" parent="Record"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Record/Area2D"]
+polygon = PackedVector2Array(83, -203.9, 83, -202.6, 318.5, -181, 320, -181, 348, -185.1, 348, -155.3, 259, 8, 257.6, 8, 196, 94.6, 196, 96.3, 155, 173, 149.7, 173, -23.5, 154, -109, 154, -109, 152.1, -153.5, 143, -175.2, 143, -348, 128.7, -348, 98.1, -138, -173.8, -138, -175, -126.3, -203, -120, -203, -22, -204, -22, -205.1)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="Overlay" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="NatashaButton" type="Button" parent="UI/Overlay"]
+layout_mode = 0
+offset_left = 1622.0
+offset_top = 27.0
+offset_right = 1886.0
+offset_bottom = 291.0
+icon = ExtResource("6_6anl5")
+
+[node name="MariaButton" type="Button" parent="UI/Overlay"]
+layout_mode = 0
+offset_left = 1622.0
+offset_top = 328.0
+offset_right = 1886.0
+offset_bottom = 592.0
+icon = ExtResource("8_jp0m3")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_nmaqi")
+autoplay = true
